@@ -1,49 +1,10 @@
-// Simple code for learnning Rust
-use std::io;
-use std::cmp::Ordering;
-use rand::random_range;
-
+// Main code for learning Rust project
+// run any kind of code to see the sample output
+mod guess_game;
+mod use_db;
+mod struct_example;
 
 fn main() {
-    println!("Starting the game...");
-    let answer: u32 = rand_num_create(0, 100); //create random number
-
-    loop {
-        println!("Please input your guess.");
-        let mut guess = String::new();
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line");
-
-        let guess: u32 = match guess.trim().parse() {
-            Ok(num) => num,
-            Err(_) => continue,
-        };
-
-        let (result, stop_flag) = check_answer(&guess, &answer);
-        println!("{}", result);
-        if stop_flag {
-            println!("Ending the game...");
-            break;
-        }
-    }
-    print!("Game Ended");
-}
-
-fn rand_num_create(start: u32, end: u32) -> u32 {
-    random_range(start..=end)
-}
-
-fn check_answer(input: &u32, answer: &u32) -> (String, bool) {
-    match input.cmp(answer) {
-        Ordering::Less => {
-            (String::from("Too small!"), false)
-        }
-        Ordering::Greater => {
-            (String::from("Too big!"), false)
-        }
-        Ordering::Equal => {
-            (String::from("You win!"), true)
-        }
-    }
+    // guess_game::start_game();
+    struct_example::test();
 }
