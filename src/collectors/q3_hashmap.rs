@@ -7,6 +7,7 @@ pub mod q3_hashmap {
     use std::io;
 
     pub fn test() {
+        println!("-----------------[ Start q3_hashmap ]-----------------");
         let mut map: HashMap<String, String> = HashMap::new();
         loop {
             
