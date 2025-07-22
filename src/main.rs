@@ -40,5 +40,6 @@ fn main() {
     // q2_test();
     // q3_test();
     // string_size::get_len(input.to_string());
-    string_size::get_word_len(input.to_string());
+    // string_size::get_word_len(input.to_string());
+    string_size::word_info(input.to_string());
 }

@@ -10,3 +10,12 @@ pub fn get_len(word: String) {
 pub fn get_word_len(word: String) {
     println!("Word '{}' length is {}(byte: {}).", word, word.chars().count(), word.len());
 }
+
+pub fn word_info(word: String) {
+    let len = word.len();
+    let size = word.chars().count();
+    let byte_per_word = (len as f64 / size as f64).ceil() as i32;
+
+    println!("Input word(sentence) is '{}'", word);
+    println!("bytes: {} | length: {} | char byte: {}", len, size, byte_per_word);
+}
